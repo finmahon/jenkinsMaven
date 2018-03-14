@@ -26,7 +26,7 @@ pipeline {
         }
         stage('Deliver') {
             steps {
-                echo 'DELIVER '
+                echo 'DELIVER QQQQQQQQQQQQQQ'
                 sh 'pwd'
                 sh 'ls'
                 sh './jenkins/scripts/deliver.sh'
