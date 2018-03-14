@@ -14,6 +14,9 @@ pipeline {
         stage('Test') {
             steps {
                 sh 'mvn test'
+                echo 'TEST '
+                sh 'pwd'
+                sh 'ls'
             }
             post {
                 always {
@@ -23,6 +26,9 @@ pipeline {
         }
         stage('Deliver') {
             steps {
+                echo 'DELIVER '
+                sh 'pwd'
+                sh 'ls'
                 sh './jenkins/scripts/deliver.sh'
             }
         }
