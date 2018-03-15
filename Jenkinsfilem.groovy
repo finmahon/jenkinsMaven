@@ -11,14 +11,6 @@ pipeline {
                 sh 'mvn -B -DskipTests clean package'
             }
         }
-        stage('Checkout') {
-          steps {
-            echo "Checking Out BPM Delete Codebase"
-            echo "======================================================="
-            checkout scm
-            echo "======================================================="
-           }
-       }
         stage('Test') {
             steps {
                 sh 'mvn test'
@@ -28,9 +20,6 @@ pipeline {
             }
             post {
                 always {
-                    echo "======================================================="
-                    echo "report"
-                    echo "======================================================="
                     junit 'target/surefire-reports/*.xml'
                 }
             }
